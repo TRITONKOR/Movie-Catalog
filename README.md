@@ -28,12 +28,13 @@ Film Catalog is a personal movie catalog application where users can search for 
    cd film-catalog
    
 2. Create a .env file in the server directory and add your TMDB API key:
+   ```bash
    TMDB_API_KEY=your_api_key_here
    
-3. Run the project using Docker:
+4. Run the project using Docker:
    docker-compose up
 
-4. Access the application in your browser at http://localhost:3000.
+5. Access the application in your browser at http://localhost:3000.
 
 ### Usage
 Once the application is running, you can search for movies by entering their titles in the search bar. The results will display detailed information about the selected movies.
