@@ -1,0 +1,49 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Logs and caches
+logs/
+*.log
+.pnpm-debug.log*
+.eslintcache
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Git configuration files
+.git/
+
+# Docker files
+docker-compose.override.yml
+*.local.yml
+/tmp/
+
+# Testing coverage
+coverage/
+.nyc_output/
+
+# React and Vite cache
+.vite
+.vite-cache
+.cache/
