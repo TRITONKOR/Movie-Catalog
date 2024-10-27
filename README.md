@@ -1,7 +1,7 @@
-# Film Catalog
+# Movie Catalog
 
 ## Description
-Film Catalog is a personal movie catalog application where users can search for movies and view detailed information about them.
+Movie Catalog is a personal movie catalog application where users can search for movies and view detailed information about them.
 
 ## Features
 - Search for movies
@@ -25,7 +25,6 @@ Film Catalog is a personal movie catalog application where users can search for 
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd film-catalog
    
 2. Create a .env file in the server directory and add your TMDB API key:
    ```bash
