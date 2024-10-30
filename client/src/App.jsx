@@ -1,14 +1,11 @@
 import './App.css';
-import MovieSearch from './components/MovieSearch/MovieSearch';
+import AppRouter from './routers/AppRouter';
 
 
 const App = () => {
 
     return (
-        <div>
-            <h1>Каталог фільмів</h1>
-            <MovieSearch />
-        </div>
+        <AppRouter />
     )
 }
 
