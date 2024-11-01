@@ -1,6 +1,12 @@
 import "./movieCard.scss";
+import { Movie } from "../Movie";
+import React from "react";
 
-const MovieCard = ({ movie }) => {
+interface MovieCardProps {
+    movie: Movie;
+}
+
+const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
 
     return (
         <div className="card">

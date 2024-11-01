@@ -4,18 +4,18 @@
   flex-wrap: nowrap;
   box-sizing: border-box;
   padding: 20px;
-  background-image: url('https://image.tmdb.org/t/p/original/9oYdz5gDoIl8h67e3ccv3OHtmm2.jpg');
   background-size: cover;
+  background-position: center;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  height: 100%;
 
   .wrapper {
     z-index: 2;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 70%;
     align-items: stretch;
 
     .poster-image {
@@ -36,6 +36,7 @@
       .film-details {
         display: flex;
         flex-direction: column;
+        gap: 30px;
 
         .title {
           display: flex;
@@ -47,6 +48,18 @@
           }
           .facts {
             display: flex;
+            justify-content: space-between;
+          }
+        }
+
+        .rating {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 5px;
+
+          .text {
+            font-weight: 600;
           }
         }
       }

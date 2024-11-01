@@ -1,7 +1,11 @@
 import React from 'react';
 import './ratingIndicator.scss';
 
-const RatingIndicator = ({ rating }) => {
+interface RatingIndicatorProps {
+    rating: number;
+}
+
+const RatingIndicator: React.FC<RatingIndicatorProps> = ({ rating }) => {
     const radius = 35;
     const strokeWidth = 5;
     const normalizedRadius = radius - strokeWidth * 0.5;
@@ -9,9 +13,9 @@ const RatingIndicator = ({ rating }) => {
     const offset = circumference - (rating / 100) * circumference;
 
 
-    const getGradientColor = (value) => {
+    const getGradientColor = (value: number) => {
         if (value < 40) return '#d60606';
-        if (value < 60) return '#f2e30a';
+        if (value < 70) return '#f2e30a';
         return '#42f55d';
     };
 
