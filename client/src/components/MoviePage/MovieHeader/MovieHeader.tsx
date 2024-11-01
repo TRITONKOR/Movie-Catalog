@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
+import { DetailedMovie, Genre } from "../DetailedMovie";
 import RatingIndicator from "./RatingIndicator/RatingIndicator";
 import './movieHeader.scss';
-import { DetailedMovie, Genre } from "../DetailedMovie";
 
 interface MovieHeaderProps {
     movie: DetailedMovie;
@@ -9,12 +9,13 @@ interface MovieHeaderProps {
 
 const MovieHeader: React.FC<MovieHeaderProps> = ({ movie }) => {
     useEffect(() => {
-        console.log("rendered header");
+
     }, [movie]);
 
     const rating: number = Math.round(movie.vote_average * 10);
     const backdropUrl: string = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
     const posterUrl: string = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
+
 
 
     return (
@@ -28,7 +29,6 @@ const MovieHeader: React.FC<MovieHeaderProps> = ({ movie }) => {
                         <div className="title">
                             <h2>{movie.title}</h2>
                             <div className="facts">
-                                <div className="certification"></div>
                                 <div className="release">{movie.release_date}</div>
                                 <div className="genres">
                                     {movie.genres && movie.genres.map((genre: Genre) => genre.name).join(", ")}
@@ -44,9 +44,10 @@ const MovieHeader: React.FC<MovieHeaderProps> = ({ movie }) => {
                             </div>
                         </div>
                         <div className="header-info">
-                            <h2>Опис</h2>
+                            <h3 className="tagline">{movie.tagline}</h3>
+                            <h3>Опис</h3>
                             <div className="overview">
-                                <p></p>
+                                <p>{movie.overview}</p>
                             </div>
                         </div>
                     </section>

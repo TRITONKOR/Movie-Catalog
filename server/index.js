@@ -39,7 +39,7 @@ fastify.get('/movie/:id', async (request, reply) => {
     const { id } = request.params;
 
     try {
-        const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
+        const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=ua-UA`;
         const response = await fetch(url);
 
         if (!response.ok) {
@@ -47,15 +47,23 @@ fastify.get('/movie/:id', async (request, reply) => {
         }
 
         const data = await response.json();
-        console.log(data);
 
-        return reply.send(data);
-
+        reply.send(data);
     } catch (error) {
         console.error(error);
-        if (!reply.sent) {
-            reply.code(500).send({ error: 'Failed to fetch data from external API' });
-        }
+        reply.code(500).send({ error: 'Failed to fetch data from external API' });
+    }
+});
+
+fastify.get('/movie/:id/credits', async (request, reply) => {
+    const { id } = request.params;
+
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`);
+        const data = await response.json();
+        reply.send(data);
+    } catch (error) {
+        reply.code(500).send({ error: 'Failed to fetch data from external API' });
     }
 });
 

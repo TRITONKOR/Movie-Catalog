@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import MovieCard from './MovieCard/MovieCard';
+import { useEffect, useState } from 'react';
 import { Movie } from './Movie';
+import MovieCard from './MovieCard/MovieCard';
 import './movieSearch.scss';
 
 const MovieSearch = () => {
     const [title, setTitle] = useState<string>('');
     const [movies, setMovies] = useState<Movie[]>([]);
-    const [error, setError] = useState<string | null>(null);
 
     const fetchMovies = async () => {
-        setError(null);
         try {
             const url: string = title
                 ? `http://localhost:3001/movies/search?title=${encodeURIComponent(title)}`
@@ -18,15 +16,13 @@ const MovieSearch = () => {
             if (!response.ok) throw new Error("Failed to fetch movies");
 
             const data: MovieResponse = await response.json();
-            console.log(data);
             setMovies(data.results || []);
         } catch (err: any) {
-            setError(err.message);
+            console.log(err.message);
         }
     };
 
     useEffect(() => {
-        console.log("dadada");
         fetchMovies();
     }, [])
 

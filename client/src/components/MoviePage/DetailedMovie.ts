@@ -6,6 +6,7 @@ export interface DetailedMovie extends Movie {
     cast: string[];
     vote_average: number;
     backdrop_path: string;
+    tagline: string;
 }
 
 export interface Genre {

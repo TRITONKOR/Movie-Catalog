@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MovieHeader from "./MovieHeader/MovieHeader";
+import CastBar from "./CastBar/CastBar";
 import { DetailedMovie } from "./DetailedMovie";
+import MovieHeader from "./MovieHeader/MovieHeader";
 import "./moviePage.scss";
 
 
@@ -32,8 +33,11 @@ const MoviePage = () => {
     return (
         <div className="page">
             <header>
-                {movie ? <MovieHeader movie={movie}/> : <div>Loading...</div>}
+                {movie ? <MovieHeader movie={movie} /> : <div>Loading...</div>}
             </header>
+            <main>
+                {movie ? <CastBar movieId={movie.id} /> : <div>Loading...</div>}
+            </main>
 
         </div>
     );

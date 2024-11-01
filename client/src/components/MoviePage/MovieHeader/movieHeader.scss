@@ -48,7 +48,7 @@
           }
           .facts {
             display: flex;
-            justify-content: space-between;
+            gap: 10px;
           }
         }
 
@@ -60,6 +60,17 @@
 
           .text {
             font-weight: 600;
+          }
+        }
+
+        .header-info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .tagline {
+            color: grey;
+            font-style: italic;
+            font-weight: 100;
           }
         }
       }
