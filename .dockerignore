@@ -24,3 +24,5 @@ build
 docker-compose.override.yml
 Dockerfile.*
 docker-compose.*
+
+movie-catalog-firebase-token.json

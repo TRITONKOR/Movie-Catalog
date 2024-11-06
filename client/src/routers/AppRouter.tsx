@@ -1,14 +1,15 @@
-import React from 'react';
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import MoviePage from '../components/MoviePage/MoviePage';
-import MovieSearch from '../components/MovieSearch/MovieSearch';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import RegisterForm from '../components/RegisterForm/RegisterForm';
+import MoviePage from '../pages/movie';
+import SearchPage from '../pages/search';
 
 const AppRouter = () => {
+    //<Navigate to="/search" replace />} />
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Navigate to="/search" replace />} />
-                <Route path="/search" element={<MovieSearch />} />
+                <Route path="/" element={<RegisterForm />} />
+                <Route path="/search" element={<SearchPage />} />
                 <Route path="/movie/:id" element={<MoviePage />} />
             </Routes>
         </Router>

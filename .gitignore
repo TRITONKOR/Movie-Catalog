@@ -47,3 +47,5 @@ coverage/
 .vite
 .vite-cache
 .cache/
+
+movie-catalog-firebase-token.json

@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import CastBar from "./CastBar/CastBar";
-import { DetailedMovie } from "./DetailedMovie";
-import MovieHeader from "./MovieHeader/MovieHeader";
-import "./moviePage.scss";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import CastBar from './CastBar/CastBar';
+import { DetailedMovie } from './DetailedMovie';
+import MovieHeader from './MovieHeader/MovieHeader';
+import './movieInfo.scss';
 
-
-const MoviePage = () => {
+const MovieInfo = () => {
     const { id } = useParams();
     const [movie, setMovie] = useState<DetailedMovie>();
     const [error, setError] = useState<string | null>(null);
@@ -16,7 +15,7 @@ const MoviePage = () => {
         try {
             const url: string = `http://localhost:3001/movie/${id}`;
             const response: Response = await fetch(url);
-            if (!response.ok) throw new Error("Failed to fetch movies");
+            if (!response.ok) throw new Error('Failed to fetch movies');
 
             const data: DetailedMovie = await response.json();
             setMovie(data || {});
@@ -26,9 +25,9 @@ const MoviePage = () => {
     };
 
     useEffect(() => {
-        console.log("rendered page")
+        console.log('rendered page');
         fetchMovie();
-    }, [id])
+    }, [id]);
 
     return (
         <div className="page">
@@ -38,9 +37,8 @@ const MoviePage = () => {
             <main>
                 {movie ? <CastBar movieId={movie.id} /> : <div>Loading...</div>}
             </main>
-
         </div>
     );
-}
+};
 
-export default MoviePage;
+export default MovieInfo;

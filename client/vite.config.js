@@ -1,9 +1,14 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
+    resolve: {
+        alias: {
+            '@tsconfig': '/config/tsconfig.json',
+        },
+    },
     server: {
         host: true,
         port: 3000,
@@ -14,8 +19,8 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                api: 'modern-compiler'
+                api: 'modern-compiler',
             },
         },
     },
-})
+});
